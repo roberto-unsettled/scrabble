@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<meta name="viewport" content="width=320, initial-scale=1">
+	
+	<meta name="keywords" content="Scrabble, missinig ñ" />
+	<meta name="author"	content="LOLA" />
+	<meta property="og:title" content="Scrabble Missing Ñ" />
+    <meta property="og:description" content="The spanish lost their most particular letter for many years, the Ñ" />
+    <meta property="og:url" content="http://www.missingn.com" />
+    <meta property="og:image" content="./img/share.png" />
+	<meta property="og:type" content="website" />
+	<title>Scrabble Missing &Ntilde;</title>
+
+	<script src="//use.typekit.net/ajp8xek.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+	<link rel="stylesheet" href="./css/style.css" type="text/css">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
+	<script type="text/javascript" src="./js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/lib/highlight.pack.js"></script>
+	<script type="text/javascript" src="./scrollmagic/minified/jquery.ScrollMagic.min.js"></script>
+	<script type="text/javascript" src="./scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+</head>
+<body id="movil" class="en">
+	<div class="header">
+		<h1 class="titleSite">
+		 Missing &Ntilde;
+		</h1>
+		<ul class="langContainer">
+		 <li class="active">
+		  eng
+		 </li>
+		 <li>
+		  cas
+		 </li>
+		</ul>
+       </div><!--header-->
+	<div id="content-wrapper">
+		<div id="try">
+			<div class="scrollContent">
+				<section id="welcome">
+					<div id="youtubeContainer"></div>
+					<!--<iframe id="playerVimeo" src="https://player.vimeo.com/video/126279937?api=1&player_id=playerVimeo" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+					<div id="showVideo">
+						<p>
+							Watch video  <span></span>
+						</p>
+					</div>
+					<div id="scrollItWelcome" class="scrollIt">
+						<p>
+							Scroll down
+						</p>
+						<div id="trigger0" class="spacer"></div>
+					</div>
+					<script>
+						// init controller
+						var controller = new ScrollMagic.Controller();
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger0"})
+							// trigger animation by adding a css class
+							.setClassToggle("#scrollItWelcome", "stop")
+							.addIndicators({name: "- stro scrollIt"}) // add indicators (requires plugin)
+							.addTo(controller);
+					</script>
+					<div id="trigger01" class="spacer"></div>
+				</section>
+				<section id="quote">
+					<a name="quote"></a>
+					<div id="quoteContainer">
+						<p class="quoteLeft">
+							&ldquo;The spanish lost their most particular letter for many years&rdquo;
+						</p>
+					</div>
+				</section>
+				<section id="recuperemos">
+					<div class="halfLeft halfScreen">
+						<h2 class="textLeft">
+							Let&rsquo;s get our &Ntilde; back
+						</h2>
+					</div>
+					<div id="bgFakeRight"></div>
+					<div id="bgFakeLeft"></div>
+					<div class="halfRight halfScreen">
+						<p class="topText textUsb">
+							The spanish, we always have something to tell, it&rsquo;s part of our culture.
+							Thats why when we see international keyboards without the letter &Ntilde; we feel unspanished.
+						</p>
+						<p class="textUsb">
+							Because at Scrabble, we know the value of that letter, we want to give it back as an
+							USB to all the spanish people that might be forced to write without the letter &Ntilde;.
+						</p>
+					</div>
+					
+					<div class="usb"></div>
+					
+				</section>
+				<section id="formulario">
+					<div class="caja">
+						
+						<div id="box" class="boxParts"></div>
+						<div id="tapaBox" class="boxParts"></div>
+					</div>
+					<div class="contentForm">
+						<h2 class="textLeft">
+							&Ntilde; USB
+						</h2>
+						<form name="formularioSolicitar" id="formularioSolicitar" action="#">
+							<label class="halfForm firstHalf">
+								<input type="text" name="nombre" id="nombre" placeholder="First Name" />
+							</label>
+							<label class="halfForm">
+								<input type="text" name="apellido" id="apellido" placeholder="Last Name" />
+							</label>
+							<label class="fullForm">
+								<input type="text" name="email" id="email" placeholder="E-mail" />
+							</label>
+							<label class="fullForm">
+								<input type="text" name="ciudad" id="ciudad" placeholder="City" />
+							</label>
+							<label class="fullForm">
+								<input type="text" name="direccion" id="direccion" placeholder="Address" />
+							</label>
+							<label class="fullForm">
+								<input type="text" name="cp" id="cp" placeholder="Post code" maxlength="5" />
+							</label>
+							<div class="radioContainer">
+								<label class="halfForm firstHalf radioSO">
+									<span id="appleIcon" ></span>
+									<input id="radio1" name="sistema"  type="radio" />
+									<span></span>
+								</label>
+								<label class="halfForm radioSO">
+									<span id="windowsIcon" ></span>
+									<input id="radio2" name="sistema" type="radio" />
+									<span></span>
+								</label>
+							</div>
+
+							<span id="sendForm">
+								Ask fo it
+							</span>
+							<div id="errorMsg">
+								*Some fields are empty
+							</div>
+							<div id="okMsg">
+								Thanks! ;D
+							</div>
+						</form>
+					</div>
+					
+					<div class="usb"></div>
+					
+					<div id="trigger02" class="spacer"></div>
+					<script>
+						// build scene
+						var $animateElem02 = 		$( "#tapaBox" );
+						
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger02", duration: 800})
+							.on("enter", function () {
+								$animateElem02.addClass( 'animated' );
+							})
+							.addIndicators({name: "sube la tapita"}) // add indicators (requires plugin)
+							.addTo(controller);
+					</script>
+				</section>
+				
+				<section id="app">
+					<div class="iphoneLaptop">
+						<div id="lapTop"></div>
+						<div id="iphone" class="iphoneApp"></div>
+						<div id="iphone11" class="iphoneApp"></div>
+						<div id="iphone12" class="iphoneApp"></div>
+						<div id="iphone13" class="iphoneApp"></div>
+						<div id="iphone2" class="iphoneApp"></div>
+						<ul id="dots">
+							<li id="dot1"></li>
+							<li id="dot2"></li>
+							<li id="dot3"></li>
+							<li id="dot4"></li>
+							<li id="dot5"></li>
+						</ul>
+						
+					</div>
+					<div class="textContainer">
+						<h2 class="textLeft">
+							&Ntilde; APP
+						</h2>
+						<p class="textRight">
+							For all those impatient Spanish that can&rsquo;t wait and want their &Ntilde;
+							right now, we created the &Ntilde;-APP, a simple app that connected with your computer
+							will make you recover your &Ntilde;. Because we know what it feels to have a word in
+							mind and you still miss a letter.
+						</p>
+						<p class="textRight">
+							<a href="https://itunes.apple.com/es/app/missing-n/id981933919?mt=8" title="descargar app en la AppStore" target="_blank">
+								<img src="./img/botonAppStore.svg" alt="boton app store" />
+							</a>
+						</p>
+					</div>
+				
+					<div id="trigger03" class="spacer"></div>
+					<script>
+						// build scene
+						
+						var $animateElem03 = 		$( ".iphoneApp" );
+						
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger03", duration: 800})
+							.on("enter", function () {
+								$( '#app').addClass( 'conecting' );
+								$animateElem03.animate({
+									top: 	'0%'
+									}, 1500, 'swing', function() {
+									$( '#dots, .iphoneApp').addClass( 'conecting' );
+								});
+							})
+							.addIndicators({name: "- baja Iphone"}) // add indicators (requires plugin)
+							.addTo(controller);
+					</script>
+				</section>
+	
+			</div>
+		</div>
+	</div>
+
+	<div id="wildFooter" class="show" >
+		<ul id="listadoConBarras">
+			<li>Missing &Ntilde;</li>
+			<li>
+				<a href="#quoteContainer" title="ir a la sección recuperemos nuestra ñ">
+					Let's get back our &Ntilde;
+				</a>
+			</li>
+			<li>
+				<a href="#recuperemos" title="ir a la sección ñ usb">
+					&Ntilde; USB
+				</a>
+			</li>
+			<li>
+				<a href="#app" title="ir a la sección de la App">
+					&Ntilde; App
+				</a>
+			</li>
+		</ul>
+		<div class="detailsFooterContainer">
+			<p class="registro">
+				<a href="http://www.scrabble.com/" title="ir a la Página oficial Scrabble" target="_blank">
+					&copy; Scrabble, 2015
+				</a>
+			</p>
+			<ul class="centrado">
+				<li>
+					<a href="http://corporate.mattel.com/terms-conditions.aspx" title="Condiciones de uso" target="_blank">
+						Terms
+					</a>
+				</li>
+				<li>
+					<a href="http://corporate.mattel.com/eea/privacy/" title="Política de privacidad" target="_blank">
+						Privacy
+					</a>
+				</li>
+				<li>
+					<a href="http://corporate.mattel.com/EEA/privacy/#cookies" title="Política sobre el Uso de cookies" target="_blank">
+						Cookie Policy
+					</a>
+				</li>
+			</ul>
+			<ul class="marcaLinks">
+				<li>
+					<a href="#" title="ir a la página de contacto" target="_blank">
+						Contact
+					</a>
+				</li>
+				<li>
+					<a href="http://www.scrabble.com/" title="ir a la Página oficial Scrabble" target="_blank">
+						Scrabble Official Site
+					</a>
+				</li>
+				
+			</ul>
+		</div><!--detailsFooterContainer-->
+
+	</div><!--wild footer-->
+	<script type="text/javascript" src="./js/lib/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

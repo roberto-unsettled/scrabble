@@ -1,0 +1,2177 @@
+@import "globals.less";
+
+@white:							#FFFFFF;
+@black:							#000000;
+@color1:						#232323; //normal text
+@color2:						#FFFFFF; //secondText
+@color3:                                                #c4c4c4; //grisclaro
+@color4:                                                #c9c9c9; //gris mas claro
+@color5:                                                #606060; //gris oscuro
+@color6:                                                #163218; //verdeOscuro
+@color10:                                               #006b28; //verde
+@color11:                                               #95c099; //verde claro
+@colorActivo:                                           #00693e;
+
+@color7:                                                #fcfcf8; //amarillo muy claro
+@color8:                                                #f9f7e5; //amarillo no muy claro
+@color9:                                                #f8f7e5; //amarillo claro
+
+//START: animationBack -------------------------------------------
+@topScroll:                                             47px;
+
+@topScrollStart:	                                    @topScroll;
+@topScrollEnd:			                                34px;
+@topScrollPlus:			                                @topScrollStart + 4;
+
+.animatedScroll {
+    0% {    background-position: center @topScrollStart; }
+    20% {   background-position: center @topScrollPlus; }
+    50% {   background-position: center @topScrollEnd; }
+    100% {    background-position: center @topScrollStart; }
+}
+@keyframes animationScroll {
+    .animatedScroll;
+}
+@-webkit-keyframes animationScroll {
+    .animatedScroll;
+}
+@-ms-keyframes animationScroll {
+    .animatedScroll;
+}
+@-moz-keyframes animationScroll {
+    .animatedScroll;
+}
+//END: animationBack -------------------------------------------
+
+//START: animationColorBg -------------------------------------------
+
+.animatedColorBg {
+    0% {    background-color: @color11; }
+    100% {    background-color: @color10; }
+}
+@keyframes animationColorBg {
+    .animatedColorBg;
+}
+@-webkit-keyframes animationColorBg {
+    .animatedColorBg;
+}
+@-ms-keyframes animationColorBg {
+    .animatedColorBg;
+}
+@-moz-keyframes animationColorBg {
+    .animatedColorBg;
+}
+//END: animationColorBg -------------------------------------------
+
+//START: animationFadeIn -------------------------------------------
+
+.animatedFadeIn {
+    0% {    .opacity( 0 ); }
+    30% {    .opacity( .5 ); }
+    100% {    .opacity( 1 ); }
+}
+@keyframes animationFadeIn {
+    .animatedFadeIn;
+}
+@-webkit-keyframes animationFadeIn {
+    .animatedFadeIn;
+}
+@-ms-keyframes animationFadeIn {
+    .animatedFadeIn;
+}
+@-moz-keyframes animationFadeIn {
+    .animatedFadeIn;
+}
+//END: animationFadeIn -------------------------------------------
+
+//START: animationFadeOut -------------------------------------------
+
+.animatedFadeOut {
+    0% {    .opacity( 1 ); }
+    30% {    .opacity( .5 ); }
+    100% {    .opacity( 0 ); }
+}
+@keyframes animationFadeOut {
+    .animatedFadeOut;
+}
+@-webkit-keyframes animationFadeOut {
+    .animatedFadeOut;
+}
+@-ms-keyframes animationFadeOut {
+    .animatedFadeOut;
+}
+@-moz-keyframes animationFadeOut {
+    .animatedFadeOut;
+}
+//END: animationFadeOut -------------------------------------------
+//START: animatedChangeBgPaso10 -------------------------------------------
+
+.animatedChangeBgPositionPaso10 {
+    0% {  bottom: -100%;  }
+    
+    100% {  bottom: 0%;  }
+}
+@keyframes animationChangeBg10 {
+    .animatedChangeBgPositionPaso10;
+}
+@-webkit-keyframes animationChangeBg10 {
+    .animatedChangeBgPositionPaso10;
+}
+@-ms-keyframes animationChangeBg10 {
+    .animatedChangeBgPositionPaso10;
+}
+@-moz-keyframes animationChangeBg10 {
+    .animatedChangeBgPositionPaso10;
+}
+//END: animatedChangeBgPaso21 -------------------------------------------
+
+//START: animatedChangeBgPaso21 -------------------------------------------
+
+.animatedChangeBgPositionPaso21 {
+    0% {    }
+    
+    100% {  background-position: 10% bottom;  }
+}
+@keyframes animationChangeBgPosition21 {
+    .animatedChangeBgPositionPaso21;
+}
+@-webkit-keyframes animationChangeBgPosition21 {
+    .animatedChangeBgPositionPaso21;
+}
+@-ms-keyframes animationChangeBgPosition21 {
+    .animatedChangeBgPositionPaso21;
+}
+@-moz-keyframes animationChangeBgPosition21 {
+    .animatedChangeBgPositionPaso21;
+}
+//END: animatedChangeBgPaso21 -------------------------------------------
+
+.ivisible {
+    color:                                                      @color8;
+    border-bottom:                                              1px solid @color3;
+}
+
+body {
+    position:                                                   relative;
+}
+
+h1 {
+    .font1Medium;
+    font-size:                                                  21px;
+    .absoluteTopLeft( 31px,34px );
+    a {
+        font-size:                                              21px;
+        color:                                                  black;
+        text-decoration:                                        none;
+        .font1Medium;
+    }
+}
+
+.header {
+    position:                                                   fixed;
+    top:                                                        0;
+    left:                                                       0;
+    height:                                                     30px;
+    width:                                                      100%;
+    color:                                                      balck;
+    z-index:                                                    70;
+    .transition( .5s all );
+    &.out {
+        color:                                                     @color1;
+    }
+}
+.langContainer {
+    overflow:                                                       hidden;
+    .absoluteTopRight( 32px,33px );
+    font-size:                                                      13px;
+    line-height:                                                    15px;
+    .font1Medium;
+        li{
+            text-decoration:                                        none;
+            color:                                                  @color1;
+            float:                                                  left;
+            display:                                                inline-block;
+            .opacity( .9 );
+            .transition( all 0.2s );
+            &:hover, &.active {
+                .opacity( 1 );
+            }
+            &.active {
+                .font1Book;
+            }
+            &:first-child {
+                &:after {
+                    content:                                        '/';
+                    padding:                                        0 7px 0 2px;
+                }
+            } //firstChild
+            a {
+                text-decoration:                                    none;
+                color:                                              @color1;
+            }
+        } //li
+} //langContainer
+
+.footer {
+    position:                                                       fixed;
+    bottom:                                                         0;
+    left:                                                           0;
+    height:                                                         30px;
+    width:                                                          100%;
+    color:                                                          @color1;
+    text-align:                                                     center;
+    z-index:                                                        90;
+    &.show {
+        position:                                                   absolute;
+        bottom:                                                     10px;
+        .registro {
+            .opacity( 0 );
+        }
+    } //si estamos abajo
+}
+.socialContainer {
+    overflow:                                                       hidden;
+    .absoluteBottomLeft( 32px,33px );
+    font-size:                                                      13px;
+    .font1Medium;
+        li {
+            float:                                                  left;
+            display:                                                inline-block;
+            .opacity( .9 );
+            .transition( all 0.2s );
+            .twt, .fb {
+                color:                                            black;
+                cursor:                                             pointer;
+            }
+            &:hover, &.active {
+                .opacity( 1 );
+            }
+            &.active {
+                .font1Book;
+            }
+            &:first-child {
+                &:after {
+                    content:                                        '/';
+                    padding:                                        0 7px 0 2px;
+                }
+            } //firstChild
+        } //li   
+} //socialContainer
+
+.registro {
+    font-size:                                                      13px;
+    .absoluteBottomRight( 32px,33px );
+    .transition( .5s all );
+    .font1Book;
+    a {
+        color:  	                                               black;
+        text-decoration:                                           none;
+    }
+}
+.logoScrabble {
+    display:                                                        inline-block;
+    width:                                                          120px;
+    height:                                                         17px;
+    margin:                                                         0 auto;
+    top:                                                            -17px;
+    position:                                                       relative;
+    .opacity( 0 );
+    .transition( .5s all );
+    &.out {
+        .opacity( 1 );
+    }
+}
+#logoFooter {
+      &.out {
+        .opacity( 1 );
+    }
+}
+#logoFooter {
+    text-decoration:                                                none;
+    border:                                                         none;
+    display:                                                        inline-block;
+    width:                                                          120px;
+    height:                                                         17px;
+}
+
+#welcome {
+    position:                                                       relative;
+    max-width:                                                       100%;
+    width:                                                          100%;
+    height:                                                          950px;
+    overflow:                                                       hidden;
+    color:                                                          @color2;
+    background:                                                     url( '../img/poster.png' ) repeat center center transparent;
+    //background-size:                                                contain;
+    p {
+        .font1Light;
+    }
+    .scrollIt {
+        width:                                                      100%;
+        .absoluteBottomLeft( 2%,0 );
+        color:                                                      black;
+        text-align:                                                 center;
+        background:                                                 url( '../img/scrollArrow_b.svg' ) no-repeat center @topScroll transparent;
+        padding-bottom:                                             50px;
+
+        .animationSimple( animationScroll 2200ms forwards linear 500ms 8 );
+        &.stop.stop {
+            .animationState( paused );
+        }
+        
+    } //scrollIT
+} //welcome
+#videoContainer {
+    .absoluteBottomLeft( 0,0);
+    height:                                                         auto;
+    width:                                                          100%;
+}
+#video {
+    width:                                                              100%;
+    bottom:                                                             -4px;
+    height:                                                             auto;
+    position:                                                           relative;
+    overflow:                                                           hidden;
+}
+
+#playerVimeo, #youtubeContainer {
+    .absoluteTopLeft( 0,0 );
+    z-index:                                                            -10;
+    &.showVideo {
+        z-index:                                                        80;
+    }
+}
+#cerrarVideo {
+    .absoluteTopRight( 30px,30px );
+    width:                                                              43px;
+    height:                                                             43px;
+    background:                                                         url( '../img/x_2.png' ) no-repeat center center transparent;
+    cursor:                                                             pointer;
+    .font1Bold;
+    z-index:                                                            -10;
+    &.showVideo {
+        z-index:                                                        999;
+    }
+} //cerrarVideo
+
+#showVideo {
+    .absoluteBottomLeft( 33%,0 );
+    margin:                                                            0 auto;
+    width:                                                             100%;
+    text-align:                                                        center;
+    p {
+        font-size:                                                      25px;
+        position:                                                       relative;
+        display:                                                        block;
+        width:                                                          143px;
+        margin:                                                         0 auto;
+        cursor:                                                         pointer;
+        color:                                                          black;
+        text-align:                                                     left;
+        .opacity( .7 );
+        .transition( .5s all );
+        span {
+            .absoluteTopRight( 0,-4px );
+            width:                                                      28px;
+            height:                                                     26px;
+            background:                                                 url( '../img/playButton_b.svg' ) no-repeat center center transparent;
+            background-size: contain;
+        }
+        &:hover {
+            .opacity( 1 );
+        }
+    } //p
+} //showVideo
+#quote {
+    position:                                                           relative;
+    overflow:                                                           hidden;
+    padding:                                                            0 62px;
+}
+#quoteContainer {
+    position:                                                           relative;
+    font-size:                                                          73px;
+    line-height:                                                        93px;
+    color:                                                              @color4;
+    padding-bottom:                                                     33px;
+    padding-top:                                                        33px;
+    p {
+        .font1Light;
+        text-align:                                                     center;
+        //&.quoteLeft {
+        //    text-align:                                                 left;
+        //}
+        //&.quoteRight {
+        //    text-align:                                                 right;
+        //}
+    }
+} //quoteContainer
+.halfLeft {
+    .absoluteTopLeft( 0,0 );
+}
+.halfRight {
+    .absoluteTopRight( 0,0 );
+}
+.halfScreen {
+    width:                                                              50%;
+    height:                                                             100%;
+}
+
+#recuperemos {
+    position:                                                           relative;
+    z-index:                                                            30;
+    overflow:                                                           hidden;
+    height:                                                             950px;
+    .halfLeft {
+        //background-color:                                               @color7;
+    }
+    .halfRight {
+        //background-color:                                               @color8;
+    }
+    .halfScreen {
+        z-index:                                                        70;
+    }
+    #bgFakeRight {
+        z-index:                                                        30;
+        background-color:                                               @color8;
+    }
+    #bgFakeLeft {
+        z-index:                                                        30;
+        background-color:                                               @color7;
+    }
+    .usb {
+        position:                                                       relative;
+        background:                                                     url( '../img/usbx2.png' ) transparent center center no-repeat;
+        background-size: contain;
+        width:                                                          100%;
+        height:                                                         288px;
+        z-index:                                                        60;
+        top:                                                            327px;
+    }
+    .textLeft {
+        display:                                                        block;
+        float:                                                          right;
+        position:                                                       relative;
+        top:                                                            444px;
+        right:                                                          98px;
+        .font1Book;
+        color:                                                          @color5;
+        text-align:                                                     right;
+        font-size:                                                      40px;
+        line-height:                                                    54px;
+        height:                                                         54px;
+        width:                                                          74%;
+        text-align:                                                     center;
+    }
+    .topText {
+        margin-top:                                                     299px;
+    }
+    .textUsb {
+        //width:                                                          65%;
+        max-width:                                                      510px;        
+        color:                                                          @color5;
+        .font1Light;
+        font-size:                                                      17px;
+        line-height:                                                    39px;
+        margin-bottom:                                                  40px;
+        margin-left:                                                    17%;
+        margin-left:                                                    168px;
+        padding-right:                                                  5%;
+        width:                                                          78%;
+        text-align: justify;
+    }
+    
+} //recuperemos
+
+#trigger01 {
+    position:                                                           absolute;
+    top:                                                                55%;
+}
+
+#formulario {
+    display:                                                            block;
+    //height:                                                             620px;
+    //height:                                                             720px;
+    height:                                                             800px;
+    position:                                                           relative;
+    .textLeft {
+        .font1Book;
+        font-size:                                                      43px;
+        line-height:                                                    45px;
+        color:                                                          @color5;
+        float:                                                          right;
+        //margin-top:                                                     89px;
+        margin-top:                                                     139px;
+        width:                                                          67%;
+        margin-right:                                                   20%;
+        max-width:                                                      377px;
+    }
+} //formulario
+
+#errorMsg {
+    .font1Book;
+    font-size:                                                          17px;
+    line-height:                                                        17px;
+    color:                                                              #642503;
+    display:                                                            none;
+    margin-top: 114px;
+}
+#okMsg {
+    display:                                                            block;
+    .font1Book;
+    font-size:                                                          17px;
+    line-height:                                                        17px;
+    color:                                                              #3c593a;
+    display:                                                            none;
+    width:                                                              100%;
+    text-align: left;
+    margin-top: 114px;
+}
+
+#formularioSolicitar {
+    width:                                                              67%;
+    max-width:                                                          377px;
+    float:                                                              right;
+    //.absoluteTopRight( 170px,20% );
+    .absoluteTopRight( 229px,20% );
+    input {
+        height:                                                         39px;
+        line-height:                                                    39px;
+        font-size:                                                      20px;
+        padding:                                                        0 8px;
+        //margin-bottom:                                                  20px;
+        margin-bottom:                                                  10px;
+        width:                                                          94%;
+        border:                                                         1px solid @color3;
+        .font1Book;
+        ::-webkit-input-placeholder {
+            .font1Light;
+            color:                                                      @color3;
+         }
+         
+         :-moz-placeholder { /* Firefox 18- */
+            .font1Light;
+            color:                                                      @color3;
+         }
+         
+         ::-moz-placeholder {  /* Firefox 19+ */
+            .font1Light;
+            color:                                                      @color3;
+         }
+         
+         :-ms-input-placeholder {  
+            .font1Light;
+            color:                                                      @color3;
+         }
+        &.error {
+            border-color:                                                #cb7d52;
+            color:                                                      #642503;
+        }
+    } //input
+    .halfForm {
+        display:                                                        inline-block;
+        width:                                                          44.3%;
+    }
+    .fullForm {
+        width:                                                          94%;
+    }
+    .firstHalf {
+        margin-right:                                                   7%;
+    }
+    #sendForm {
+        display:                                                        inline-block;
+        color:                                                          @color3;
+        border:                                                         1px solid @color3;
+        font-size:                                                      20px;
+        height:                                                         37px;
+        line-height:                                                    37px;
+        padding:                                                        0px 38px 0px 38px;
+        float:                                                          right;
+        margin-right:                                                   3px;
+        cursor:                                                         pointer;
+        .font1Medium;
+        .transition( .5s all );
+        &:hover {
+            background-color:                                           @colorActivo;
+            color:                                                      @color2;
+            border-color:                                               @colorActivo;
+        }
+    } //sendForm
+    .radioContainer {
+        margin-bottom:                                                  30px;
+        margin-top:                                                     21px;
+    }
+    .radioSO {
+        @heightRadioSo:                                                 58px;
+        position:                                                       relative;
+        height:                                                         @heightRadioSo;
+        cursor:                                                         pointer;
+        width:                                                          45.6%;
+        span{
+            position:                                                   absolute;
+            right:                                                      0;
+            width:                                                      100%;
+            height:                                                     @heightRadioSo;
+            color:                                                      #FFF;
+            text-align:                                                 center;
+            border:                                                     1px solid @color3;
+            .transition( .5s all );
+            &.error {
+                border-color:                                           red;
+            }
+        } //span
+        
+         
+        span:after{
+            content:                                                    ""; /*if CSS is disabled span elements are not displayed*/
+        }
+         
+        input{
+            position:                                                   absolute;
+            right:                                                      0;
+            margin:                                                     0;
+            width:                                                      100%;
+            height:                                                     100%;
+            .opacity( 0 );
+            cursor:                                                     pointer;
+        }
+         
+        #radio1 + span{ /*the span element that immediately follow the radio button */
+            //visibility:                                                 hidden; /*temporarily hide the "YES" label*/
+            background:                                                 url( '../img/appleIcon.png' ) no-repeat transparent center center;
+            background-size:                                            13%;
+            .opacity( .6 );
+        }
+        #radio1 + span:after{
+            content:                                                    "";
+        }
+        #radio1:checked + span{
+            visibility:                                                 visible; /*show the "YES" label only if the radio button is checked*/
+            //background:                                                 url( '../img/appleIcon.png' ) no-repeat #efefef center center;
+            border-color:                                               @colorActivo;
+            background-size:                                            13%;
+            .opacity( 1 );
+        }
+        #radio2 + span{ /*the span element that immediately follow the radio button */
+            background:                                                 url( '../img/windowsIcon.png' ) no-repeat transparent center center;
+            background-size:                                            13%;
+            .opacity( .6 );
+        }
+        #radio2 + span:after{
+            content:                                                    "";
+        }
+        #radio2:checked + span{
+            visibility:                                                 visible; /*show the "YES" label only if the radio button is checked*/
+            //background:                                                 url( '../img/windowsIcon.png' ) no-repeat transparent center center;
+            background-size:                                            13%;
+            border-color:                                               @colorActivo;
+            .opacity( 1 );
+        }
+    } //radioSO
+
+} //formularioSolicitar
+
+.boxParts {
+    width:                                                              101%;
+    max-width:                                                          804px;
+    height:                                                             100%;
+    .absoluteTopRight( 0,14% );
+    background-color:                                                   transparent;
+    background-position:                                                center center;
+    background-repeat:                                                  no-repeat;
+    background-size:                                                    contain;
+}
+#tapaBox {
+    background-image:                                                   url( '../img/tapaBox_x2.png' );
+    z-index:                                                            60;
+    top:                                                                -17%;
+    .transition( 2.6s all );
+    &.animated {
+        top:                                                            -40%;
+    }
+} //tapaBox controlar esto con mediaQuerys
+#box {
+    background-image:                                                   url( '../img/box_x2.png' );
+    z-index:                                                            50;
+}
+#trigger02 {
+    position:                                                           absolute;
+    top:                                                                95px;
+}
+
+#app {
+    display:                                                            block;
+    overflow:                                                           hidden;
+    position:                                                           relative;
+    height:                                                             950px;
+    background-color:                                                   @color9;
+    .transitionDoble( .4s height, 1.2s background-position );
+    &.conecting {
+        background-position:                                            left center;
+    }
+    .textContainer {
+        max-width:                                                      525px;
+        width:                                                          80%;
+        color:                                                          @color5;
+        font-size:                                                      53px;
+        line-height:                                                    55px;
+        margin:                                                         249px 0 0 80px;
+        .font1Book;
+        .textLeft {
+            display:                                                    block;
+            margin-bottom:                                              39px;
+        }
+        p {
+            color:                                                      @color6;
+            .font1Light;
+            line-height:                                                36px;
+            font-size:                                                  17px;
+            width:                                                      95%;
+            padding-right:                                              5%;
+            text-align:                                                 justify;
+            a {
+                text-decoration:                                        none;
+                border:                                                 none;
+            }
+            img {
+                margin-top:                                             67px;
+                width:                                                  178px;
+                height:                                                 55px;
+            }
+        } //p
+    } //textContainer
+    ul {
+        .absoluteTopLeft( 400px,335px );
+        z-index:                                                        20;
+        overflow:                                                       hidden;
+        li {
+            width:                                                      10px;
+            height:                                                     10px;
+            .border-radius( 8px );
+            background-color:                                           @color10;
+            margin-left:                                                9px;
+            .opacity( 0 );
+            //.transition( .5s all );
+        }
+    } //ul
+} //app
+
+#lapTop {
+    background-image:                                                   url( '../img/teclado.jpg' );
+    background-color:                                                   @color9;
+    background-repeat:                                                  no-repeat;
+    background-position:                                                left top;
+    background-size:                                                    contain;
+    width:                                                              50%;
+    height:                                                             100%;
+    max-width:                                                          344px;
+    .absoluteTopLeft( 0,-1% );
+    z-index:                                                            10;
+}
+
+
+@extraDelay:                                                            500ms;
+@timeDot:                                                               800ms;
+@delayDot1:                                                             200ms;
+
+@timeColorBg:                                                           900ms;
+@delayBg1:                                                              @timeDot + @delayDot1 + 400;
+
+@delayDot2:                                                             @delayDot1 + ( @timeColorBg / 2 );
+@delayBg2:                                                              @delayDot2 + @timeDot + @extraDelay;
+@delayDot3:                                                             @delayDot2 + ( @timeColorBg / 2 );
+@delayBg3:                                                              @delayDot3 + @timeDot + @extraDelay;
+
+@delayDot4:                                                             @delayDot3 + ( @timeColorBg / 2 );
+@delayBg4:                                                              @delayDot4 + @timeDot + @extraDelay;
+@delayDot5:                                                             @delayDot4 + ( @timeColorBg / 2 );
+@delayBg5:                                                              @delayDot5 + @timeDot + @extraDelay;
+
+.conecting {
+    z-index:                                                            10;
+    #dot1 {
+        display:                                                    inline-block;
+        .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot1 1, animationColorBg @timeColorBg forwards linear @delayBg1 1 );
+    }
+    #dot2 {
+        display:                                                    inline-block;
+        .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot2 1, animationColorBg @timeColorBg forwards linear @delayBg2 1 );
+    }
+    
+    #dot3 {
+        display:                                                    inline-block;
+        .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot3 1, animationColorBg @timeColorBg forwards linear @delayBg3 1 );
+    }
+    
+    #dot4 {
+        display:                                                    inline-block;
+        .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot4 1, animationColorBg @timeColorBg forwards linear @delayBg4 1 );
+    }
+    #dot5 {
+        display:                                                    inline-block;
+    }
+} //conecting
+
+
+#iphone, #iphone2, #iphone11, #iphone12, #iphone13 {
+    .absoluteTopRight( -22%, 4% );
+    height:                                                             100%;
+    width:                                                              40%;
+    background-size:                                                    contain;
+    background-color:                                                   transparent;
+    background-repeat:                                                  no-repeat;
+    background-position:                                                center;
+    .opacity( 0 );
+    
+}
+@timeIphoneApp:                                                         300ms;
+@delayIphoneApp1:                                                       300ms;
+@delayIphoneApp2:                                                       300ms + @timeIphoneApp + @delayIphoneApp1;
+@delayIphoneApp3:                                                       300ms + @timeIphoneApp + @delayIphoneApp2;
+@delayIphoneApp4:                                                       800ms + @timeIphoneApp + @delayIphoneApp3;
+
+
+#iphone {
+    background-image:                                                   url( '../img/iphone10.jpg' );
+    .opacity( 1 );
+    z-index:                                                            10;
+}
+#iphone11 {
+    background-image:                                                   url( '../img/iphone11.jpg' );
+    z-index:                                                            11;
+    &.conecting {
+        .animationSimple( animationFadeIn @timeIphoneApp forwards linear @delayIphoneApp1 1 );
+    }
+} //iphone11
+#iphone12 {
+    background-image:                                                   url( '../img/iphone12.jpg' );
+    z-index:                                                            12;
+    &.conecting {
+        .animationSimple( animationFadeIn @timeIphoneApp forwards linear @delayIphoneApp2 1 );
+    }
+} //iphone11
+#iphone13 {
+    z-index:                                                            13;
+    background-image:                                                   url( '../img/iphone13.jpg' );
+    &.conecting {
+        .animationSimple( animationFadeIn @timeIphoneApp forwards linear @delayIphoneApp3 1 );
+    }
+} //iphone11
+#iphone2 {
+    z-index:                                                            14;
+    background-image:                                                   url( '../img/iphone2.jpg' );
+    &.conecting {
+        .animationSimple( animationFadeIn @timeIphoneApp forwards linear @delayIphoneApp4 1 );
+    }
+} //iphone2
+
+#app ul.conecting {
+    .animationSimple( animationFadeOut @timeDot forwards linear @delayIphoneApp4 1 );
+}
+
+#trigger03 {
+    position:                                                           absolute;
+    top:                                                                30px;
+}
+
+#descarga {
+    background-color:                                                   @color7;
+    display:                                                            block;
+    position:                                                           relative;
+    //height:                                                             270px;
+    height:                                                             179px;
+    padding-top:                                                        72px;
+    padding-bottom:                                                     22px;
+    .separadorVertical {
+        width:                                                          1px;
+        height:                                                         85px;
+        background-color:                                               @color3;
+        .absoluteTopLeft( 72px,0 );
+    }
+}
+
+#descargaMac {
+    width:                                                              252px;
+    height:                                                             130px;
+    display:                                                            block;
+    background:                                                         url( '../img/descargaMac.svg' ) no-repeat transparent;
+    background-size:    	                                               contain;
+    margin:                                                             0 auto;
+}
+#descargaMacEn {
+    width:                                                              255px;
+    height:                                                             132px;
+    display:                                                            block;
+    background:                                                         url( '../img/descargaMacEn.svg' ) no-repeat transparent;
+    background-size:    	                                               contain;
+    margin:                                                             0 auto;
+}
+#pasos{
+    display:                                                            block;
+    position:                                                           relative;
+    //height:                                                             796px;
+    height:                                                             950px;
+    overflow:                                                           hidden;
+    .transition( .5s all );
+    h2 {
+        .font1Book;
+        font-size:                                                      50px;
+        line-height:                                                    55px;
+        color:                                                          @color5;
+        margin-top:                                                     93px;
+        margin-bottom:                                                  64px;
+        text-align:                                                     center;
+        width:                                                          100%;
+    }
+}
+@timePaso10:                                                            1200ms;
+@delayPaso10:                                                           300ms;
+@timePaso11:                                                            600ms;
+@delayPaso11:                                                           @timePaso10 + @delayPaso10 + 600ms;
+
+
+
+@timePaso31:                                                            600ms; //cambiar bg desktop ultima vez
+@delayPaso31:                                                           400ms;
+
+#trigger04 {
+    position:                                                           absolute;
+    top:                                                                54px;
+}
+#howToContainer {
+    overflow:                                                           hidden;
+    position:                                                           relative;
+    width:                                                              80%;
+    min-width:                                                          600px;
+    height:                                                             500px;
+    margin:                                                             0 auto 45px auto;
+    border-bottom:                                                      1px solid @color3;
+    text-align:                                                         center;
+    .transition( .5s all );
+    .screen {
+        background-size:                                                61% auto;
+        background-position:                                            50% bottom;
+        background-color:                                               transparent;
+        background-repeat:                                              no-repeat;
+        width:                                                          100%;
+        max-width:                                                      1304px;
+        min-width:                                                      600px;
+        height:                                                         100%;
+    }
+    .screen11 {
+        background-image:                                               url( '../img/paso11.png' );
+        .absoluteBottomLeft( -100%,0 );
+        z-index:                                                        80;
+    }
+    .screen12 {
+        background-image:                                               url( '../img/paso12.png' );
+        .absoluteBottomLeft( 0,0 );
+        .opacity( 0 );
+        z-index:                                                        85;
+    }
+    .screen21 {
+        background-image:                                               url( '../img/paso21.png' );
+        background-position:                                            10% bottom;
+        .absoluteBottomLeft( 0,0 );
+        .opacity( 0 );
+        z-index:                                                        90;
+    }
+    .screen22 {
+        background-image:                                               url( '../img/paso22.png' );
+        background-position:                                            10% bottom;
+        .absoluteBottomLeft( 0,0 );
+        .opacity( 0 );
+        z-index:                                                        95;
+    }
+    .screen31 {
+        background-image:                                               url( '../img/paso3.png' );
+        background-position:                                            10% bottom;
+        .absoluteBottomLeft( 0,0 );
+        .opacity( 0 );
+        z-index:                                                        100;
+    }
+    .iphone {
+        .transition( .5s all );
+        //background-image:                                               url( '../img/iphonePaso21.png' );
+        background-size:                                                18.5% auto;
+        background-position:                                            99% bottom;
+        background-color:                                               transparent;
+        background-repeat:                                              no-repeat;
+        width:                                                          100%;
+        height:                                                         100%;
+        position:                                                       absolute;
+        right:                                                          14%;
+        bottom:                                                         0;
+        .opacity( 0 );
+    }
+    .iphone21 {
+        background-image:                                               url( '../img/iphonePaso21.png' );
+        bottom:                                                         -100%;
+        .opacity( 1 );
+    }
+    .iphone22 {
+        background-image:                                               url( '../img/iphonePaso22.png' );
+        bottom:                                                         0;
+    }
+    .iphone23 {
+        background-image:                                               url( '../img/iphonePaso23.png' );
+        bottom:                                                         0;
+    }
+    &.paso10 {
+        .screen11 {
+            .animationSimple( animationChangeBg10 @timePaso10 forwards cubic-bezier(0, 0.26, 0.58, 1) @delayPaso10 1 );
+        }
+        .screen12 {
+            .animationSimple( animationFadeIn @timePaso11 forwards linear @delayPaso11 1 );
+        }
+    }
+@timePaso21:                                                            1200ms;
+@delayPaso21:                                                           300ms; //mover Left
+
+@delayIphoneUp:                                                         @delayPaso21 + @timePaso21 + 200;
+
+@timePaso212:                                                           900ms; //mostrar iphone
+@delayPaso212:                                                          @delayPaso21 + @timePaso21 + 400;
+
+@timeIphonePaso22:                                                      600ms; //cambiar bg Iphone
+@delayIphonePaso22:                                                     @delayPaso212 + @timePaso212 + 400;
+
+@timePaso22:                                                            600ms; // cambiar BgPantalla
+@delayPaso22:                                                           @timeIphonePaso22 + @delayIphoneUp + 400;
+
+@timeIphonePaso23:                                                      600ms; //cambiar bg Iphone ultima vez
+@delayIphonePaso23:                                                     @timePaso22 + @delayPaso22 + 400;
+
+@timePaso24:                                                            600ms; //cambiar bg desktop ultima vez
+@delayPaso24:                                                           @timeIphonePaso23 + @delayIphonePaso23 + 400;
+    &.paso21 {
+        text-align:                                                     left;
+        .screen {
+            bottom:                                                     0;
+            //.animationSimpleTriple( animationChangeBgPosition21 @timePaso21 forwards cubic-bezier(0.3, 0.82, 0.26, 0.95) @delayPaso21 1, animationChangeBg21 @timePaso22 forwards linear @delayPaso22 1, animationChangeBg22 @timePaso24 forwards linear @delayPaso24 1 );
+            .animationSimple( animationChangeBgPosition21 @timePaso21 forwards cubic-bezier(0, 0, 0.42, 1.02) @delayPaso21 1 );
+        }
+        .screen21 {
+            .animationSimple( animationFadeIn @timePaso22 forwards linear @delayPaso22 1 );
+        }
+        .screen22 {
+            .animationSimple( animationFadeIn @timePaso24 forwards linear @delayPaso24 1 );
+        }
+        .iphone21 {
+            //.opacity( 1 );
+            //.animationSimple( animationChangeBg10 @timePaso212 forwards ease-out @delayPaso22 1 );
+            .animationSimple( animationChangeBg10 @timePaso212 forwards ease-out @delayIphoneUp 1 );
+            //.animationSimpleTriple( animationChangeBg10 @timePaso212 forwards cubic-bezier(0.3, 0.82, 0.26, 0.95) @delayPaso212 1, animationChangeBgIphone21 @timeIphonePaso22 forwards linear @delayIphonePaso22 1, animationChangeBgIphone22 @timeIphonePaso23 forwards linear @delayIphonePaso23 1 );
+        }
+        .iphone22 {
+            .animationSimple( animationFadeIn @timeIphonePaso23 forwards linear @delayIphonePaso22 1 );
+            //.animationSimpleTriple( animationChangeBg10 @timePaso212 forwards cubic-bezier(0.3, 0.82, 0.26, 0.95) @delayPaso212 1, animationChangeBgIphone21 @timeIphonePaso22 forwards linear @delayIphonePaso22 1,animationChangeBgIphone22 @timeIphonePaso23 forwards linear @delayIphonePaso23 1 );
+        }
+        .iphone23 {
+            .animationSimple( animationFadeIn @timeIphonePaso23 forwards linear @delayPaso24 1 );
+            //.animationSimpleTriple( animationChangeBg10 @timePaso212 forwards cubic-bezier(0.3, 0.82, 0.26, 0.95) @delayPaso212 1, animationChangeBgIphone21 @timeIphonePaso22 forwards linear @delayIphonePaso22 1,animationChangeBgIphone22 @timeIphonePaso23 forwards linear @delayIphonePaso23 1 );
+        }
+    }//paso21
+    &.paso31 {
+        text-align:                                                     left;
+        .screen31 {
+            .animationSimple( animationFadeIn @timePaso31 forwards linear @delayPaso31 1 );
+        }
+        .iphone31 {
+          background-image:                                             url( '../img/iphonePaso31.png' );
+          bottom:                                                       0;
+          .opacity( 1 );
+        }
+    }//paso21
+}
+#pasosLista {
+    overflow:                                                           hidden;
+    position:                                                           relative;
+    width:                                                              52%;
+    margin:                                                             0 auto;
+    max-width:                                                          1304px;
+    min-width:                                                          600px;
+    li {
+        //
+        //display:                                                        inline-block;
+        //float:                                                          left;
+        //max-width:                                                      240px;
+        //width:                                                          28%;
+        //font-size:                                                      17px;
+        //line-height:                                                    21px;
+        //.font1Light;
+        //color:                                                          @color3;
+        ////margin-right:                                                   6%;
+        //margin-right:                                                   8%;
+        //cursor:                                                         pointer;
+
+        cursor:                                                         pointer;
+        width:                                                          243px;
+        height:                                                         120px;
+        font-size:                                                      17px;
+        line-height:                                                    21px;
+        .font1Light;
+        color:                                                          @color3;
+        .transition( .5s all );
+        &.activo, &:hover {
+            color:                                                      @colorActivo;
+            span {
+                border-color:                                           @colorActivo;
+                color:                                                  @colorActivo;
+            }
+        }
+        &:last-child {
+            margin-right:                                               0px;
+        }
+    } //li
+    span {
+        @heightPasoSpan:                                                45px;
+        display:                                                        inline-block;
+        float:                                                          left;
+        margin-right:                                                   22px;
+        height:                                                         @heightPasoSpan;
+        width:                                                          45px;
+        border:                                                         1px solid @color3;
+        .border-radius( 23px );
+        .font1Light;
+        font-size:                                                      41px;
+        line-height:                                                    47px;
+        text-align:                                                     center;
+        .transition( .5s all );
+    }
+} //pasosLista
+
+#paso1 {
+    .absoluteTopLeft( 0,0 );
+}
+#paso2 {
+    display:                                                            block;
+    margin:                                                             0 auto;
+}
+#paso3 {
+    .absoluteTopRight( 0,0 );
+}
+
+#test {
+    display:                                                            block;
+    position:                                                           relative;
+    height:                                                             950px;
+    background-color:                                                   @color8;
+    h2 {
+        .absoluteTopRight( 42px, -6% );
+        .font1Book;
+        font-size:                                                      50px;
+        line-height:                                                    55px;
+        color:                                                          @color5;
+        margin-top:                                                     157px;
+        max-width:                                                      672px;
+        margin-right:                                                   12.5%;
+        width:                                                          86%;
+    }
+    textarea, #mirameNoMeToques {
+        .absoluteTopRight( 298px, 1.6% );
+        width:                                                          86%;
+        max-width:                                                      672px;
+        border:                                                         1px @color3 solid;
+        //padding:                                                        29px 15px;
+        padding:                                                         29px 15px 40px 19px;
+        font-size:                                                      16px;
+        line-height:                                                    29px;
+        background:                                                     transparent;
+        resize:                                                         none;
+        height:                                                         330px;
+        overflow:                                                       hidden;
+        .font1Light;
+    }
+} //test
+.eneInicial,
+.eneFinal {
+    .absoluteTopRight( -18px, 25% );
+    margin:                                                             0 auto;
+    width:                                                              50%;
+    max-width:                                                          314px;
+    height:                                                             100%;
+    z-index:                                                            40;
+    .transition( .4s all );
+}
+.eneInicial {
+    background:                                                         url( '../img/eneInicial.svg' ) transparent no-repeat center center;
+    background-size:                                                    contain;
+    .opacity( 0 );
+}
+.eneFinal {
+    background:                                                         url( '../img/eneFinal.svg' ) transparent no-repeat center center;
+    background-size:                                                    contain;
+    .opacity( 0 );
+}
+#mirameNoMeToques {
+    color:                                                              @color3;
+    z-index:                                                            20;
+}
+#mirameYTocame {
+    color:                                                              @color6;
+    z-index:                                                            40;
+}
+
+#trigger05 {
+    position:                                                           absolute;
+    top:                                                                0;
+}
+
+#wildFooter {
+    display:                                                            block;
+    height:                                                             0;
+    overflow:                                                           hidden;
+    color:                                                              @color6;
+    width:                                                              100%;
+    .transform( .5s all );
+    &.show {
+        height:                                                         200px;
+    }
+    ul {
+        overflow:                                                       hidden;
+        //position:                                                       relative;
+    }
+    li {
+        display:                                                        inline-block;
+        float:                                                          left;
+    }
+} //wildfooter
+
+#listadoConBarras {
+    width:                                                              80%;
+    margin:                                                             52px auto;
+    height:                                                             68px;
+    border-top:                                                         1px solid @color3;
+    border-bottom:                                                      1px solid @color3;
+    li {
+        line-height:                                                    68px;
+        font-size:                                                      12px;
+        .font1SemiBold;
+        &:first-child {
+            margin-right:                                               12px;
+        }
+        &:last-child {
+            a {
+                &:after {
+                    content: '';
+                }
+            }
+        }
+        a {
+            .font1Medium;
+            color:                                                      @color6;
+            text-decoration:                                            none;
+            &:after {
+                content:                                                '/';
+                margin:                                                 0 4px;
+            }
+        }
+    } //li
+} //listadoConBarras
+.detailsFooterContainer {
+    position:                                                           relative;
+    overflow:                                                           hidden;
+    width:                                                              80%;
+    margin:                                                             52px auto 42px auto;
+    height:                                                             68px;
+    .registro {
+        float:                                                          left;
+        position:                                                       relative;
+        bottom:                                                         inherit;
+        right:                                                          inherit;
+    }
+    .centrado {
+        width:                                                          400px;
+        margin:                                                         0 auto;
+        li {
+            &:last-child {
+                a {
+                    &:after {
+                        content: ' ';
+                    }
+                }
+            }
+        }
+    } //centrado
+    .marcaLinks {
+        //float:                                                          right;
+        .absoluteTopRight( 0,0 );
+        width:                                                          200px;
+        height:                                                         20px;
+        li {
+            float:                                                      right !important;
+            &:first-child {
+                a {
+                    &:after {
+                        content: ' ';
+                    }
+                }
+            }
+        }
+    }
+    
+    .centrado, .marcaLinks {
+        li {
+            a {
+                .font1Book;
+                font-size:                                              12px;
+                text-decoration:                                        none;
+                color:                                                  @color6;
+                &:after {
+                    content:                                            '|';
+                    margin:                                             0 4px 0 2px;
+                }
+            }
+        } //li
+    }
+} //detailsFooterContainer
+
+.en {
+    #showVideo {
+        p {
+            width:                                                      168px;
+        }
+    } //showVideo
+    #recuperemos {
+        .topText {
+            margin-top:                                                 332px;
+        }
+    } //recuperemos
+    #howToContainer {
+         .screen11 {
+            background-image:                                               url( '../img/paso11_en.png' );
+        }
+        .screen12 {
+            background-image:                                               url( '../img/paso12_en.png' );
+        }
+    } //howToContainer
+}
+
+//recuperemos-------------------------------------
+@media ( max-width: 1280px ) {
+    #welcome .scrollIt {
+        bottom:                                                         10%;
+    }
+} //media
+
+@media ( max-width: 1370px ) {
+    #recuperemos {
+        .textUsb {
+            width:                                                      67%;
+        }
+    } //recuperemos
+} //media
+
+@media ( max-width: 1268px ) {
+    .en #recuperemos {
+        .topText {
+            margin-top:                                                 338px;
+        }
+    }
+    #recuperemos {
+        .topText {
+            margin-top:                                                 264px;
+        }
+        .textUsb {
+            width:                                                      64%;
+        }
+    } //recuperemos
+} //media
+@media ( max-width: 1178px ) {
+    .en #recuperemos, #recuperemos {
+        .textLeft {
+            font-size:                                                  46px;
+        }
+    } //recuperemos
+} //media
+@media ( max-width: 1070px ) {
+    
+    .en #recuperemos {
+        .topText {
+            margin-top:                                                 300px;
+        }
+    }
+    
+    #recuperemos {
+        .textUsb {
+            width:                                                      62%;
+        }
+        .topText {
+            margin-top:                                                 224px;
+        }
+    } //recuperemos
+} //media
+@media ( max-width: 938px ) {
+    .en #recuperemos {
+        .topText {
+            margin-top:                                                 262px;
+        }
+    }
+    #recuperemos {
+        .textUsb {
+            width:                                                      60%;
+        }
+        .topText {
+            margin-top:                                                 180px;
+        }
+    } //recuperemos
+} //media
+@media ( max-width: 880px ) {
+    .en #recuperemos {
+        .topText {
+            margin-top:                                                 218px;
+        }
+    }
+    #recuperemos {
+        .textUsb {
+            width:                                                      54%;
+        }
+        .topText {
+            margin-top:                                                 100px;
+        }
+    } //recuperemos
+} //media
+@media ( max-width: 774px ) {
+    #recuperemos {
+        .textUsb {
+            width:                                                      58%;
+        }
+    } //recuperemos
+} //media
+
+
+//Lineas Cita--------------------------------------
+@media ( max-width: 1311px ) {
+    #quoteContainer {
+        font-size:                                                      66px;
+    }
+} //media
+@media ( max-width: 1197px ) {
+    #quoteContainer {
+        font-size:                                                      56px;
+        line-height:                                                    86px;
+    }
+} //media
+@media ( max-width: 1034px ) {
+    #quoteContainer {
+        font-size:                                                      50px;
+        line-height:                                                    76px;
+    }
+} //media
+@media ( max-width: 938px ) {
+    #quoteContainer {
+        font-size:                                                      58px;
+        line-height:                                                    86px;
+    }
+} //media
+
+//Lineas Cita--------------------------------------
+
+//Tapa caja--------------------------------------
+@media ( max-width: 1490px ) {
+    #tapaBox.animated {
+        top:                                                            -36%;
+    }   
+}
+
+@media ( max-width: 1317px ) {
+    #tapaBox.animated {
+        top:                                                            -32%;
+    }   
+}
+@media ( max-width: 1060px ) {
+    #tapaBox.animated {
+        top:                                                            -27%;
+    }   
+}
+
+@media ( max-width: 800px ) {
+    #tapaBox.animated {
+        top:                                                            -24%;
+    }   
+}
+//Tja--------------------------------------
+
+//descargaPc--------------------------------------
+@media ( max-width: 775px ) {
+    #descargaPc {
+        left:                                                           auto;
+        right:                                                          7%;
+    }
+
+    #descargaMac {
+        left:                                                           7%;
+        right:                                                          auto;
+    }
+} //media
+
+
+//descargaPc--------------------------------------
+
+//pasos--------------------------------------
+@media ( max-width: 1322px ) {
+    #howToContainer {
+        height:                                                         460px;
+    }
+    #pasos {
+        //height:                                                         850px;
+        h2 {
+            margin-bottom:                                              55px;
+        }
+    }
+    #pasosLista {
+        li {
+            font-size:                                                  16px;
+            width:                                                      224px;
+        }
+    }
+} //media
+@media ( max-width: 1256px ) {
+    #howToContainer {
+        height:                                                         440px;
+    }
+    #pasos {
+        height:                                                         760px;
+        h2 {
+            margin-bottom:                                              0px;
+        }
+    }
+    #pasosLista {
+        li {
+            width:                                                      28%;
+            font-size:                                                  16px;
+            text-align:                                                 center;
+        }
+        span {
+           margin:                                                      0 auto 8px auto;
+           display:                                                     block;
+           float:                                                       none;
+        }
+    }
+    
+} //media
+@media ( max-width: 905px ) {
+    
+    #pasos {
+        height:                                                         653px;
+    }
+    
+} //media
+@media ( max-width: 768px ) {
+    
+    #pasos, #descarga, #test, #welcome .scrollIt {
+        display:                                                        none;
+    }
+    #quoteContainer {
+        font-size:                                                      38px;
+        line-height:                                                    57px;
+        padding-bottom:                                                 20px;
+    }
+    #app {
+        .halfRight {
+            top:                                                        -45px;
+            right:                                                      55px;
+        }
+    }
+    #formularioSolicitar .radioSO #radio1:checked + span,
+    #formularioSolicitar .radioSO #radio1 + span,
+    #formularioSolicitar .radioSO #radio2:checked + span,
+    #formularioSolicitar .radioSO #radio2 + span {
+        background-size:                                                19%;
+    }
+} //media
+
+@media ( max-width: 1085px ) {
+    #howToContainer {
+        height:                                                         400px;
+    }
+    
+} //media
+
+//pasos--------------------------------------
+
+//puntos--------------------------------------
+@media screen and ( min-width: 1666px ) {
+    .conecting{
+        #dot5 {
+            .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot5 1, animationColorBg @timeColorBg forwards linear @delayBg5 1 );
+        }
+    }
+    
+} //media
+@media ( max-width: 1565px ) {
+    .conecting #dot4 {
+        display:                                                        none;
+    }
+} //media
+
+@media ( max-width: 1457px ) {
+    .conecting #dot3 {
+        display:                                                        none;
+    }
+} //media
+@media ( max-width: 1395px ) {
+    .conecting #dot2 {
+        display:                                                        none;
+    }
+} //media
+
+//puntos--------------------------------------
+@media ( max-width: 1395px ) {
+    #app {
+        height:                                                         760px;
+        ul {
+            //left:                                                       291px;
+            left:                                                       41%;
+            top:                                                        261px;
+            li {
+                width:                                                  10px;
+                height:                                                 10px;
+            }
+        } //ul
+        .textContainer {
+            margin-top:                                                 61px
+        }
+    } //app
+    #iphone, #iphone2, #iphone11, #iphone12, #iphone13 {
+        width:                                                          38%;
+        right:                                                          3%;
+        top:                                                            -13% !important;
+    }
+    .conecting {
+        #dot2, #dot3, #dot4, #dot5 {
+            display:                                                    inline-block;
+        }
+        #dot5 {
+            .animationSimpleDoble( animationFadeIn @timeDot forwards linear @delayDot5 1, animationColorBg @timeColorBg forwards linear @delayBg5 1 );
+        }
+    }
+    #lapTop {
+        width:                                                          38.75%;
+    }
+} //media
+@media ( max-width: 1331px ) {
+    #iphone, #iphone2, #iphone11, #iphone12, #iphone13 {
+        //width:                                                          202px;
+    }
+    .conecting {
+        #dot5 {
+            display:                                                    none;
+        }
+    }
+} //media
+@media ( max-width: 1232px ) {
+    .conecting {
+        #dot4 {
+            display:                                                    none;
+        }
+    }
+} //media
+@media ( max-width: 1183px ) {
+    .conecting {
+        #dot3 {
+            display:                                                    none;
+        }
+    }
+} //media
+
+@media ( max-width: 1122px ) {
+    #app {
+        #iphone, #iphone2, #iphone11, #iphone12, #iphone13 {
+            width:                                                      42%;
+            
+        }
+        &.conecting {
+            //background-position:                                        -4% center;
+        }
+        ul {
+           left:                                                        43%;
+        }
+    } //app
+} //media
+@media ( max-width: 1079px ) {
+    #app {
+        &.conecting {
+            //background-position:                                        -5% center;
+        }
+        ul {
+           //left:                                                        245px; 
+        }
+    } //app
+} //media
+@media ( max-width: 1017px ) {
+    #app {
+        background-image:                                               none;
+        #iphone, #iphone2, #iphone11, #iphone12, #iphone13 {
+            height:                                                     100%;
+            width:                                                      67%;
+            right:                                                      15%;
+            top:                                                        0 !important;
+        }
+        .textContainer {
+            margin-top:                                                 94px;
+        }
+        ul {
+           display:                                                     none;
+        }
+        #lapTop {
+            display: none;
+        }
+    } //app
+} //media
+@media ( max-width: 1229px ) {
+    #test {
+        h2 {
+            font-size:                                                  45px;
+        }
+    } //test
+} //media
+@media ( max-width: 1105px ) {
+    #test {
+        h2 {
+            font-size:                                                  50px;
+        }
+    } //test
+} //media
+@media ( max-width: 900px ) {
+    #test {
+        h2 {
+            font-size:                                                  45px;
+        }
+    } //test
+} //media
+@media ( max-width: 762px ) {
+    #test {
+        h2 {
+            font-size:                                                  40px;
+        }
+    } //test
+} //media
+
+//footer
+@media ( max-width: 900px ) {
+    .detailsFooterContainer {
+        .marcaLinks {
+            display:                                                    none;
+        }
+        .centrado {
+            float:                                                      right;
+            margin:                                                     0;
+            width:                                                      auto;
+        }
+    }
+    
+} //media
+@media ( max-width: 768px ) {
+    .en #recuperemos, #recuperemos {
+        overflow:                                                       hidden;
+        .halfScreen, {
+            display:                                                    block;
+            width:                                                      100%;
+            position:                                                   relative;
+        }
+        .textLeft {
+            line-height:                                                300px;
+            height:                                                     300px;
+            top:                                                        0;
+            width:                                                      100%;
+            text-align:                                                 center;
+            right:                                                      0;
+        }
+        .textUsb {
+            width:                                                      80%;
+            margin:                                                     20px auto 36px;
+        }
+        .halfLeft {
+            float:                                                      left;
+            height:                                                     300px;
+            background-color:                                          #fcfcf8;
+            
+            line-height:                                                300px;
+        }
+        .halfRight {
+            float:                                                      left;
+            height:                                                     auto;
+            padding:                                                    40px 0;
+            margin-top:                                                 0;
+            z-index:                                                    80;
+         //   background-color:                                          #fcfcf8;
+            
+        }
+        .usb{
+            background:                                                 url( '../img/usbIpad.jpg' ) no-repeat center top;
+            background-size:                                            contain;
+            width:                                                      100%;
+            height:                                                     478px;
+            .absoluteTopLeft( 213px,0 );
+            z-index:                                                    70;
+        }
+        #bgFakeRight {
+            background-color:                                           #f9f8e6;
+            height:                                                     800px;
+            width:                                                      100%;
+            .absoluteBottomLeft( 0,0 );
+            z-index:                                                    60;
+        }
+        #bgFakeLeft {
+            display:                                                    none;
+        }
+    } //recuperemos
+    #app .textContainer {
+        margin-top: 204px;
+    }
+} //media
+
+@media ( max-width: 526px ) {
+    #recuperemos {
+        .textLeft {
+            font-size:                                                  34px;
+        }
+    } //recuperemos
+    #formulario {
+        .halfRight {
+            //display:                                                    block;
+            //float:                                                      left;
+            //width:                                                      100%;
+            //position:                                                   relative;
+            //height:                                                     298px;
+            display:                                                    none;
+        }
+        .halfLeft {
+            display:                                                    block;
+            float:                                                      right;
+            width:                                                      100%;
+            position:                                                   relative;
+            height:                                                     320px;
+        }
+        .textLeft {
+            width:                                                      97%;
+            max-width:                                                  97%;
+            height:                                                     auto;
+            //text-align:                                                 center;
+            margin:                                                     0 auto 30px auto;
+            line-height:                                                52px;
+        }
+        .halfLeft{
+            height:                                                     auto;
+        }
+        #formularioSolicitar {
+            width:                                                      97%;
+            max-width:                                                  97%;
+            position:                                                   relative;
+            top:                                                        0;
+            right:                                                      0;
+            #sendForm {
+                margin-right:                                           3%;
+            }
+        }
+    } //formulario
+    
+    #app {
+        .halfLeft {
+            position:                                                   relative;
+            float:                                                      left;
+            height:                                                     380px;
+            
+        }
+        .halfRight {
+            position:                                                   relative;
+            float:                                                      right;
+            top:                                                        0;
+            right:                                                      0;
+        }
+        .textContainer{
+            margin:                                                     0 auto;
+            max-width:                                                  80%;
+        }
+        .textContainer p {
+            height:                                                     auto;
+            padding-bottom:                                             60px;
+        }
+        .halfScreen {
+            margin-bottom:                                              5px;
+            width:                                                      100%;
+        }
+        #iphone, #iphone2, #iphone11,
+        #iphone12, #iphone13 {
+            right:                                                      -11%;
+        }
+        #lapTop {
+            display:                                                    block;
+        }
+        ul {
+            display:                                                    block;
+            left:                                                       31%;
+            top:                                                        161px;
+        }
+        .conecting{
+            #dot3, #dot4, #dot5 {
+                display:                                                inline-block;
+            }
+        }
+        
+    } //app
+    .detailsFooterContainer .centrado {
+        margin:                                                         0;
+        float:                                                          left;
+    }
+}
+
+.spacer {
+    visibility: hidden;
+}
+
+#movil {
+    .header {
+        position:                                                       absolute;
+        top:                                                            -1em;
+    }
+    h1{
+        top:                                                            1.5em;
+        left:                                                           1em;
+        font-size:                                                      1.2em;
+    }
+    .langContainer {
+        top:                                                            2.5em;
+        right:                                                          1em;
+        font-size:                                                      .8em;
+        line-height:                                                    1.1em;
+    }
+    #welcome {
+        background-image:                                               url( '../img/posterMovil.jpg' );
+        background-size:                                                100% 100%;
+    }
+    #showVideo {
+        bottom:                                                         21%;
+    }
+    #quote {
+        padding:                                                        0 2em;
+    }
+    #quoteContainer {
+        font-size:                                                      1.4em;
+        line-height:                                                    2em;
+        padding-bottom:                                                 1.2em;
+    }
+    #recuperemos {
+        height:                                                         62em;
+        .textLeft {
+            font-size:                                                  1.5em;
+        }
+        .textUsb {
+            line-height:                                                1.8em;
+            font-size:                                                  1.2em;
+            margin:                                                     1em auto;
+        }
+        .halfRight {
+            padding:                                                    1em 0px 0em 0;
+        }
+    } //recuperemos
+    #formulario {
+        height:                                                         auto;
+        padding:                                                        0 0 5em 0;
+        .caja {
+            display:                                                    block;
+            width:                                                      100%;
+            height:                                                     21em;
+            position:                                                   relative;
+        }
+        .boxParts {
+            right:                                                      5%;
+        }
+        #tapaBox.animated {
+            top:                                                        -35%;
+        }
+        .contentForm {
+            display:                                                    block;
+            width:                                                      100%;
+            overflow:                                                   hidden;
+            position:                                                   relative;
+        }
+        .textLeft {
+            width:                                                      97%;
+            max-width:                                                  97%;
+            margin-left:                                                3%;
+            margin-bottom:                                              1em;
+            display:                                                    block;
+            margin-right:                                               0;
+            font-size:                                                  3em;
+            line-height:                                                1.2em;
+            text-align:                                                 left;
+        }
+        #formularioSolicitar {
+            width:                                                      100%;
+            max-width:                                                  100%;
+            position:                                                   relative;
+            right:                                                      0;
+            top:                                                        0;
+            float:                                                      none;
+            overflow:                                                   hidden;
+            .firstHalf {
+                margin:                                                 0 4.2%;
+            }
+            input {
+                width:                                                  87%;
+            }
+            .fullForm {
+                input {
+                    width:                                              88%;
+                    margin-left:                                        4%;
+                }
+            } //fullForm
+            .radioContainer {
+                margin-bottom:                                          2em;
+            }
+            .radioSO {
+                width:                                                  43.6%;
+            }
+            #sendForm {
+                margin-right:                                           0;
+                margin-left:                                            3%;
+                float: left;
+                    height:                                             3em;
+                    line-height:                                        3em;
+                    padding:                                            0;
+                    width:                                              93%;
+                    text-align: center;
+            }
+        } //formularioSolicitar
+        #errorMsg {
+            font-size:                                                  1em;
+            line-height:                                                1.2em;
+            margin-top:                                                 7em;
+            margin-left:                                                1em;
+        }
+        #okMsg {
+            font-size:                                                  1em;
+            line-height:                                                1.2em;
+            margin-top:                                                 0;
+            margin-left:                                                1em;
+        }
+    } //formulario
+    #app {
+        height:                                                         auto;
+        .iphoneLaptop {
+            width:                                                      100%;
+            max-width:                                                  100%;
+            float:                                                      none;
+            overflow:                                                   hidden;
+            height:                                                     20em;
+        }
+        .textContainer {
+            width:                                                      100%;
+            max-width:                                                  100%;
+            float:                                                      none;
+            overflow:                                                   hidden;
+            margin-top:                                                 0;
+            margin-left:                                                0;
+            .textLeft {
+                font-size:                                              1em;
+                line-height:                                            1.2em;
+                width:                                                  97%;
+                margin-left:                                            3%;
+            }
+            p {
+                line-height:                                            1.6em;
+                font-size:                                              .4em;
+                width:                                                  92%;
+                margin-left:                                            3%;
+                display:                                                block;
+                padding-bottom:                                         2em;
+            }
+        }
+        #lapTop {
+            width:                                                      33%;
+            height:                                                     18em;
+            display:                                                    block;
+        }
+        #iphone, #iphone2, #iphone11,
+        #iphone12, #iphone13 {
+            height:                                                     14em;
+            width:                                                      59%;
+            top:                                                        1em !important;
+            right:                                                      -10%;
+        }
+        ul {
+            top:                                                        7em;
+        }
+        #dot5 {
+            display:                                                    none;
+        }
+    } //app
+    #wildFooter {
+        height:                                                         auto;
+         width:                                                         100%;
+        max-width:                                                      100%;
+        float:                                                          none;
+        overflow:                                                       hidden;
+        #listadoConBarras {
+            height:                                                     auto;
+            overflow:                                                   hidden;
+            border:                                                     none;
+            li {
+                border-top:                                             1px solid @color3;
+                line-height:                                            4.4em;
+                font-size:                                              .8em;
+                display:                                                block;
+                width:                                                  97%;
+                a:after {
+                    content:                                            ' ';
+                }
+                &:last-child {
+                    border-bottom:                                      1px solid @color3;
+                }
+            }
+        } //listadoConBaras
+        li {
+            width:                                                      auto;
+        }
+    } //wildFooter
+    .detailsFooterContainer .registro {
+        margin-bottom:                                                  1em;
+    }
+    #formularioSolicitar .radioSO #radio1:checked + span, #formularioSolicitar .radioSO #radio1 + span, #formularioSolicitar .radioSO #radio2:checked + span, #formularioSolicitar .radioSO #radio2 + span {
+        background-size:                                                16%;
+    }
+} //movil
+@media ( min-width: 500px ) {
+    #movil {
+        #formulario #tapaBox.animated {
+            top:                                                        -43%;
+        }
+        #recuperemos {
+            height:                                                     50em;
+        }
+        #app ul {
+            display:                                                    block;
+            left:                                                       36%;
+        }
+        .conecting {
+          #dot2, #dot3, #dot4, #dot5  {
+            display:                                                    inline-block;
+          }
+        }
+    } //movil
+} //media
+
+.noSvg {
+        #welcome .scrollIt {
+            background:                                                 url( '../img/scrollArrow_b.png' ) no-repeat center @topScroll transparent;
+        }
+        #showVideo p span {
+            background:                                                 url( '../img/playButton_b.png' ) no-repeat center center transparent;
+        }
+        #descargaMac {
+        background:                                                         url( '../img/descargaMac.png' ) no-repeat transparent;
+
+        }
+        #descargaMacEn {
+        background:                                                         url( '../img/descargaMacEn.png' ) no-repeat transparent;
+
+        }
+        .eneInicial {
+            background:                                                  url( '../img/eneInicial.png' ) transparent no-repeat center center;
+        }
+        .eneFinal {
+            background:                                                  url( '../img/eneFinal.png' ) transparent no-repeat center center;
+        }
+}

@@ -1,0 +1,212 @@
+//START: animationLeftToRight
+@leftStart:			-473px;
+@leftEnd:			32px;
+@leftEndPlus:			@leftEnd + 12px;
+
+.animatedLeftToRightOpacity {
+    0% { left:		@leftStart; }
+    10% { .opacity( 0.1 ); }
+    80% { .opacity( 1 ); left: @leftEndPlus; }
+    100% { left: 	@leftEnd; .opacity( 1 ); }
+}
+@keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-webkit-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-ms-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+@-moz-keyframes animationLeftToRightOpacity {
+    .animatedLeftToRightOpacity;
+}
+
+//.animationSimple( animationLeftToRightOpacity forwards @time2 ease-out @delay3 1 );
+/*
+	<div class="texto21 texto animado"></div>
+	<div class="texto22 texto animado"></div>
+	<div class="texto23 texto animado"></div>
+	<div class="texto24 texto animado"></div>
+	<div class="texto25 texto animado"></div>
+	<div class="texto26 texto animado"></div>
+	.texto {
+		width: 			481px;
+		height: 			30px;
+	      }
+	      
+	      //animationLeftToRightOpacity
+	      .texto21 {
+		  .opacity( 0 );
+		  .absoluteTopLeft( 307px,@leftStart );
+		  .animationSimple( animationLeftToRightOpacity forwards @time2 ease-out @delay21 );
+		  background: 		url('../img/texto21.png') no-repeat left top;
+	      }
+	      .texto22 {
+		  .opacity( 0 );
+		  .absoluteTopLeft( 342px,@leftStart );
+		  .animationSimple( animationLeftToRightOpacity forwards @time2 ease-out @delay22 );
+		  background: 		url('../img/texto22.png') no-repeat left top;
+	      }
+	      .texto23 {
+		  .opacity( 0 );
+		  .absoluteTopLeft( 372px,@leftStart );
+		  .animationSimple( animationLeftToRightOpacity forwards @time2 ease-out @delay23 );
+		  background: 		url('../img/texto23.png') no-repeat left top;
+	      }
+*/
+
+//END: animationLeftToRight
+
+//START: secuenciaOut
+
+.animatedOut{
+    0% { .opacity(1); }
+    70% { .opacity(1); }
+    80% { .opacity(0.6); }
+    90% { .opacity(0.3); }
+    100% { .opacity(0); }
+}
+@keyframes animationdOut {
+    .animatedOut;
+}
+@-webkit-keyframes animationdOut {
+    .animatedOut;
+}
+@-ms-keyframes animationdOut {
+    .animatedOut;
+}
+@-moz-keyframes animationdOut {
+    .animatedOut;
+}
+
+//.animationSimple( animationdOut forwards @time2 linear @delay3 1 );
+//END: secuenciaOut
+
+//START: animationIn
+
+.animatedIn{
+    from { .opacity(0); }
+    to { .opacity(1); }
+}
+@keyframes animationIn {
+    .animatedIn;
+}
+@-webkit-keyframes animationIn {
+    .animatedIn;
+}
+@-ms-keyframes animationIn {
+    .animatedIn;
+}
+@-moz-keyframes animationIn {
+    .animatedIn;
+}
+
+	//.animationSimple( animationIn forwards @time2 linear @delay3 1 );
+//END: animationIn
+
+
+//START: moveRightToLeft
+@start:			400px;
+.animatedMoveRightToLeft {
+    0% { left:		@start; }
+    100% { left: 	-@start; }
+}
+@keyframes animationMoveRightToLeft {
+    .animatedMoveRightToLeft;
+}
+@-webkit-keyframes animationMoveRightToLeft {
+    .animatedMoveRightToLeft;
+}
+@-ms-keyframes animationMoveRightToLeft {
+    .animatedMoveRightToLeft;
+}
+@-moz-keyframes animationMoveRightToLeft {
+    .animatedMoveRightToLeft;
+}
+
+	//.animationSimple( animationMoveRightToLeft forwards @time2 linear @delay3 infinite );
+//END: ChangeBgFin
+
+
+//START: moreHeight
+@numFrames:		6;
+@heightFrame:		14px;
+@totalHeight:		@numFrames * @heightFrames;
+
+.animatedMoreHeight{
+    from { height:	@heightFrame; }
+    to { height:	@totalHeight; }
+}
+@keyframes moreHeight {
+    .animatedMoreHeight;
+}
+@-webkit-keyframes moreHeight {
+    .animatedMoreHeight;
+}
+@-ms-keyframes moreHeight {
+    .animatedMoreHeight;
+}
+@-moz-keyframes moreHeight {
+    .animatedMoreHeight;
+}
+
+	//.animationSimple( moreHeight forwards @time2 steps(5) @delay2 1 );
+//END: moreHeight
+
+//START: animationSprite
+@numFrames:		6;
+@heightFrame:		14px;
+@totalHeight:		@numFrames * @heightFrames;
+
+.animatedSprite{
+    from { background-position:  center  0px; }
+    to { background-position: center -@totalHeight; }
+}
+@keyframes animationSprite {
+    .animatedSprite;
+}
+@-webkit-keyframes animationSprite {
+    .animatedSprite;
+}
+@-ms-keyframes animationSprite {
+    .animatedSprite;
+}
+@-moz-keyframes animationSprite {
+    .animatedSprite;
+}
+
+	//.animationSimple( animationSprite @time2 steps(@numFrames) @delay2 infinite );
+//END: BgRoad
+
+
+//START: animatedMsgFashion
+@heightMsgFashion:	272px;
+@widthMsgFashion:	236px;
+.animationMsgFashion{
+    0% { background-position: 	-@widthMsgFashion @heightMsgFashion; }
+    20% { background-position:  left bottom; }
+    80% {
+	background-position:  left bottom;
+	.opacity(1);
+    }
+    100% {
+	background-position:  left bottom;
+	.opacity(0);
+    }
+}
+@keyframes animatedMsgFashion {
+    .animationMsgFashion
+}
+@-webkit-keyframes animatedMsgFashion {
+    .animationMsgFashion
+}
+@-ms-keyframes animatedMsgFashion {
+    .animationMsgFashion
+}
+@-moz-keyframes animatedMsgFashion {
+    .animationMsgFashion
+}
+
+	//.animationSimple(animatedMsgFashion forwards @time5 linear @delay5 1);
+//END: animatedMsgFashion
